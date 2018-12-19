@@ -10,8 +10,6 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { SigninComponent } from './signin/signin.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
@@ -20,8 +18,6 @@ import { ContactsComponent } from './contacts/contacts.component';
     NavMenuComponent,
     HomeComponent,
     SigninComponent,
-    CounterComponent,
-    FetchDataComponent,
     ContactsComponent
   ],
   imports: [
@@ -31,9 +27,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     NgbPaginationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'signin', component: SigninComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'contacts', component: ContactsComponent },
     ])
   ],
