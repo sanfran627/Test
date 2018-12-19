@@ -1,0 +1,15 @@
+Assignment:
+1.	Create a single-page CRUD application using C#, WebAPI (.Net Core), Angular2, Entity Framework, GitHub.
+2.	The user should be able to interact with a scrollable list of business contacts, add a new contact record, edit / update an existing one, and delete a record.
+3.	Each business contact record contains basic information such as name and address. The application should access a simple database through a RESTful service. The UI is undefined.
+4.	Once released, we expect this application to be used by approximately 20,000 users daily, and we expect each of those users to maintain ~1,000 contact records.
+5.	Upon completion, check in your code to Github and send the link to HawkSoft.
+6.	------ will review your code the following day and will let you know about next steps.
+
+
+My Notes:
+
+1.  No request made for a signin page, but adding one in the event performance is needed
+2.  Will create an option to generate more users (beyond user #1)
+3.  Will create an option to generate n# of contacts
+4.  This mandates a RESTful response, so adhering to that for this...

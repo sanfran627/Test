@@ -1,0 +1,41 @@
+<h1>Contact Listing</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!contacts && !error"><em>Loading...</em></p>
+<p *ngIf="error"><em>{{error}}</em></p>
+
+
+<table class='table table-striped' *ngIf="contacts">
+  <thead>
+    <tr>
+      <th>Contact Id</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Age</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts | slice: pageSize | slice: 0:itemsPerPage">
+      <td>{{ contact.contactId }}</td>
+      <td>
+        <form #contactForm="ngForm">
+          <label *ngIf="!editMode">{{contact.firstName}}</label>
+          <input type="text" class="form-control" *ngIf="editMode" [ngModel]="contact.firstName" (ngModelChange)="contact.firstName=$event" id="firstName" required name="firstName">
+          <button *ngIf="editMode" (click)="update(contact.contactId)">Save</button>
+        </form>
+      </td>
+      <td>{{ contact.lastName }}</td>
+      <td>{{ contact.age }}</td>
+      <td>
+        <button (click)="editMode=true">Edit</button>
+        <button (click)="delete(contact.contactId)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ngb-pagination [collectionSize]="contacts.length" #numPages [pageSize]="itemsPerPage" [(page)]="currentPage" (pageChange)="onPageChange(currentPage)"></ngb-pagination>
+
+<button class="btn btn-primary" (click)="generate()">Generate Contacts</button>
+
